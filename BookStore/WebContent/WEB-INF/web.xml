@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>KaptchaServlet</servlet-name>
+    <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>KaptchaServlet</servlet-name>
+    <url-pattern>/img.jpg</url-pattern>
+  </servlet-mapping>
+  
+  <error-page>
+    <error-code>500</error-code>
+    <location>/pages/error/error.jsp</location>
+  </error-page>
+  
+  <context-param>
+  	<param-name>UnChecked</param-name>
+  	<param-value>/pages/user/login.jsp,/pages/user/regist.jsp</param-value>
+  </context-param>
+</web-app>
